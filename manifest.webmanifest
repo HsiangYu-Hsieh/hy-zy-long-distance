@@ -1,0 +1,23 @@
+{
+  "name": "Hsiang-Yu × Zi-Yi Long Distance Dashboard",
+  "short_name": "HY × ZY",
+  "description": "A private long-distance time dashboard for Hsiang-Yu and Zi-Yi.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff8fb",
+  "theme_color": "#f7dbe8",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7dbe8" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="HY × ZY" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Hsiang-Yu × Zi-Yi｜Long Distance</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="hero-top">
+        <div>
+          <p class="eyebrow">LONG DISTANCE DASHBOARD</p>
+          <h1>Hsiang‑Yu <span>×</span> Zi‑Yi</h1>
+        </div>
+        <button id="viewerToggle" class="ghost-button" type="button" aria-label="切換觀看者">
+          <span id="viewerIcon">🇺🇸</span>
+          <span id="viewerText">Hsiang‑Yu 模式</span>
+        </button>
+      </div>
+      <p class="subtitle" id="heroSubtitle">把時差變簡單，把想念留給彼此。</p>
+    </header>
+
+    <main>
+      <section class="status-banner" id="statusBanner">
+        <div class="status-icon" id="statusIcon">💗</div>
+        <div>
+          <p class="status-label" id="statusLabel">下一次通話</p>
+          <h2 id="statusTitle">正在計算…</h2>
+          <p id="statusDetail">—</p>
+        </div>
+      </section>
+
+      <section class="clock-grid">
+        <article class="clock-card me-card">
+          <div class="card-head">
+            <span class="person-chip" id="meChip">Hsiang‑Yu</span>
+            <span class="place" id="mePlace">—</span>
+          </div>
+          <div class="clock" id="meClock">--:--:--</div>
+          <div class="date" id="meDate">—</div>
+          <div class="mini-status" id="meMiniStatus">📍 目前所在地</div>
+        </article>
+
+        <article class="clock-card partner-card">
+          <div class="card-head">
+            <span class="person-chip" id="partnerChip">Zi‑Yi</span>
+            <span class="place" id="partnerPlace">Taiwan</span>
+          </div>
+          <div class="clock" id="partnerClock">--:--:--</div>
+          <div class="date" id="partnerDate">—</div>
+          <div class="mini-status" id="partnerMiniStatus">🌿 非上班時間</div>
+        </article>
+      </section>
+
+      <section class="countdown-card">
+        <div>
+          <p class="section-kicker">NEXT CALL</p>
+          <h3 id="nextCallLabel">下一次固定通話</h3>
+          <p class="next-call-time" id="nextCallTime">—</p>
+        </div>
+        <div class="countdown" aria-live="polite">
+          <div><strong id="cdDays">0</strong><span>天</span></div>
+          <div><strong id="cdHours">00</strong><span>時</span></div>
+          <div><strong id="cdMinutes">00</strong><span>分</span></div>
+          <div><strong id="cdSeconds">00</strong><span>秒</span></div>
+        </div>
+      </section>
+
+      <section class="timeline-card">
+        <div class="section-title-row">
+          <div>
+            <p class="section-kicker">TODAY IN TAIWAN</p>
+            <h3>Zi‑Yi 今天的時間帶</h3>
+          </div>
+          <span class="legend">粉紅＝通話 · 黃色＝上班</span>
+        </div>
+
+        <div class="timeline-wrap">
+          <div class="timeline" id="timeline">
+            <div class="segment sleep" style="left:0%;width:33.333%"></div>
+            <div class="segment work" style="left:33.333%;width:37.5%"></div>
+            <div class="segment free" style="left:70.833%;width:18.75%"></div>
+            <div class="segment call" id="weekdayCallSegment" style="left:89.583%;width:2.083%"></div>
+            <div class="segment free" style="left:91.666%;width:8.334%"></div>
+            <div class="now-marker" id="nowMarker"><span>現在</span></div>
+          </div>
+          <div class="timeline-labels">
+            <span>00</span><span>08</span><span>17</span><span>21:30</span><span>24</span>
+          </div>
+        </div>
+
+        <div class="today-summary">
+          <span id="taiwanWorkSummary">💼 平日上班 08:00–17:00</span>
+          <span id="todayCallSummary">💗 今日固定通話：—</span>
+        </div>
+      </section>
+
+      <section class="schedule-card">
+        <div class="section-title-row">
+          <div>
+            <p class="section-kicker">SCHEDULE</p>
+            <h3>遠距通話排程</h3>
+          </div>
+          <span class="phase-pill" id="phasePill">—</span>
+        </div>
+
+        <div class="schedule-list" id="scheduleList">
+          <div class="schedule-row">
+            <div class="schedule-day">週一～週五</div>
+            <div class="schedule-times">
+              <strong id="weekdayTw">台灣 —</strong>
+              <span id="weekdayUs">美國 —</span>
+            </div>
+            <div class="schedule-tag pink">短通話</div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-day">週六</div>
+            <div class="schedule-times">
+              <strong id="weekendTw">台灣 09:30–11:00</strong>
+              <span id="weekendUs">美國 —</span>
+            </div>
+            <div class="schedule-tag purple">遠距約會</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trip-card">
+        <div class="section-title-row">
+          <div>
+            <p class="section-kicker">TRIP PHASE</p>
+            <h3>美國行程</h3>
+          </div>
+        </div>
+        <div class="trip-progress">
+          <div class="trip-line"></div>
+          <div class="trip-step" data-phase="taiwan-before">
+            <span class="dot"></span><b>台灣</b><small>出發前</small>
+          </div>
+          <div class="trip-step" data-phase="san-antonio">
+            <span class="dot"></span><b>San Antonio</b><small>10/1–12/30</small>
+          </div>
+          <div class="trip-step" data-phase="los-angeles">
+            <span class="dot"></span><b>Los Angeles</b><small>12/30–1/14</small>
+          </div>
+          <div class="trip-step" data-phase="returning">
+            <span class="dot"></span><b>返台</b><small>1/14–1/16</small>
+          </div>
+          <div class="trip-step" data-phase="taiwan-after">
+            <span class="dot"></span><b>台灣</b><small>回家</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="settings-card">
+        <details>
+          <summary>⚙️ 顯示設定</summary>
+          <div class="settings-grid">
+            <label>
+              我的身份
+              <select id="viewerSelect">
+                <option value="hsiang-yu">Hsiang‑Yu</option>
+                <option value="zi-yi">Zi‑Yi</option>
+              </select>
+            </label>
+            <label class="switch-row">
+              <input type="checkbox" id="showSeconds" checked />
+              <span>顯示秒數</span>
+            </label>
+          </div>
+          <p class="settings-note">設定只會存在這台裝置的瀏覽器裡。</p>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <span>Made for Hsiang‑Yu & Zi‑Yi 💗</span>
+      <span id="footerVersion">v1.0</span>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
